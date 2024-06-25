@@ -133,9 +133,25 @@ const Home = () => {
     }
   }, []);
 
+  const modalRef = useRef<HTMLDivElement>(null);
+
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (modalVisible && modalRef.current && !modalRef.current.contains(event.target as Node)) {
+      setModalVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [modalVisible]);
+
   return (
     <div className="w-full h-screen flex flex-col p-3">
-      <div className="flex flex-col h-full relative items-center justify-around">
+      <div className="flex flex-col h-full relative items-center justify-around" >
         <div
           className="relative justify-center items-center w-full h-[50px] mb-2"
           ref={buttonWrapperRef}
@@ -158,7 +174,7 @@ const Home = () => {
         </div>
 
         <div
-          className="flex justify-center items-center not-selectable relative"
+          className="flex justify-center items-center relative"
           ref={bodyRef}
           onTouchStart={(e) => {
             if (!isMobile) return;
@@ -209,53 +225,48 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      {modalVisible && (
-        <>
-          <div
-            className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 flex items-center justify-center"
-            onClick={() => setModalVisible(false)}
-          ></div>
 
-          <div className="fixed bottom-0 left-0 right-0 p-4 shadow-lg bg-[#1E3D4B] rounded-t-2xl flex flex-col justify-center gap-4 animate-slide-in-bottom transform transition-all max-h-[80vh] overflow-y-auto">
-            <div className="flex justify-end w-full h-12">
-              <button
-                className="text-black bg-[#4F7383] p-1 rounded-full"
-                onClick={closeWalletModal}
-                style={{
-                  width: "30px",
-                  height: "30px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <img
-                  src="/image/icon/close_icon.svg"
-                  alt="close"
-                  className="w-4 h-4"
-                />
-              </button>
-            </div>
-            <div className="flex items-center justify-center">
-              <img
-                src="/image/icon/connect_wallet.svg"
-                alt="connectButton"
-                className="w-20 h-25"
-              />
-            </div>
-            <p className="text-3xl font-bold text-center mb-2">
-              Please connect the <br></br>wallet first!
-            </p>
-            <div
-              className="flex text-xl justify-center items-center w-full h-16 px-2 py-1 bg-gradient-to-r from-[#07AEEA] to-[#D3984E] rounded-xl cursor-pointer gap-2"
-              onClick={handleTonButtonClick}
-            >
-              <img src="/image/icon/union.svg" alt="tonbuttonicon" />
-              Connnect TON Wallet
-            </div>
-          </div>
-        </>
-      )}
+      <div
+        className={`absolute bottom-0 left-0 right-0 p-4 z-20 transition-all delay-100 duration-300 ease-in-out shadow-lg bg-[#1E3D4B] rounded-t-2xl flex flex-col justify-center gap-4 transform max-h-[80vh] overflow-y-auto ${
+          modalVisible ? "translate-y-0" : "translate-y-full"
+        }`}
+        style={{ transformOrigin: "bottom" }} // This ensures the transformation starts from the bottom
+        ref={modalRef}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex justify-end w-full h-12">
+          <button
+            className="text-black bg-[#4F7383] p-1 rounded-full"
+            onClick={closeWalletModal}
+            style={{
+              width: "30px",
+              height: "30px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <img src="/image/close_icon.svg" alt="close" className="w-4 h-4" />
+          </button>
+        </div>
+        <div className="flex items-center justify-center">
+          <img
+            src="/image/connect_wallet.svg"
+            alt="connectButton"
+            className="w-20 h-25"
+          />
+        </div>
+        <p className="text-3xl font-bold text-center mb-2">
+          Please connect the <br></br>wallet first!
+        </p>
+        <div
+          className="flex text-xl justify-center items-center w-full h-16 px-2 py-1 bg-gradient-to-r from-[#07AEEA] to-[#D3984E] rounded-xl cursor-pointer gap-2"
+          onClick={handleTonButtonClick}
+        >
+          <img src="/image/union.svg" alt="tonbuttonicon" />
+          Connnect TON Wallet
+        </div>
+      </div>
     </div>
   );
 };

@@ -2,22 +2,21 @@
   0% {
     opacity: 0;
     top: 40%;
-    left: 20%;
   }
+
   40% {
     opacity: 1;
     top: 35%;
-    left: 15%;
   }
+
   90% {
     opacity: 1;
     top: 30%;
-    left: 10%;
   }
+
   100% {
     opacity: 0;
     top: 30%;
-    left: 10%;
   }
 }
 

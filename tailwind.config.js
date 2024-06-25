@@ -15,6 +15,16 @@ export default {
       fontFamily: {
         'press-start': ['"Press Start 2P"',...defaultTheme.fontFamily.sans],
       },
+      keyframes: {
+        'slide-in-bottom': {
+          '0%': { transform: 'translateY(100%)', opacity: 0 },
+          '100%': { transform: 'translateY(0)', opacity: 1 },
+        },
+        'slide-out-bottom': {
+          '0%': { transform: 'translateY(0)', opacity: 1 },
+          '100%': { transform: 'translateY(100%)', opacity: 0 },
+        },
+      },
     },
   },
   plugins: [],
