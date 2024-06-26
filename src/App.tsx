@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <div
-        className="App h-screen flex flex-coljustify-between overflow-hidden overflow-y-hidden relative"
+        className="App h-screen flex flex-col max-sm:w-full sm:w-[500px] mx-auto justify-between overflow-hidden overflow-y-hidden relative"
       >
         <Routes>
           <Route path="/" element={<Layout />}>

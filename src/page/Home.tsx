@@ -162,7 +162,7 @@ const Home = () => {
           <TonConnectButton className="absolute right-0" />
         </div>
         <div
-          className="text-center mt-[10%] text-black font-press-start"
+          className="text-center mt-[10%] text-black font-press-start not-selectable"
           style={{ WebkitTextStrokeColor: "white" }}
         >
           <div
@@ -184,10 +184,12 @@ const Home = () => {
           ref={bodyRef}
           onTouchStart={(e) => {
             if (!isMobile) return;
+            e.stopPropagation();
             handleTouch(e);
           }}
           onClick={(e) => {
             console.log("clickEvent: ", e);
+            e.stopPropagation();
             handleTap(e);
           }}
         >
