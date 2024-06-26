@@ -10,7 +10,7 @@ import "./index.css";
 WebApp.ready();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <TonConnectUIProvider manifestUrl="https://tma-x-atoms-test.vercel.app/tonconnect-manifest.json">
+  <TonConnectUIProvider manifestUrl="https://rune-force-tma.vercel.app/tonconnect-manifest.json">
     <GlobalProvider>
       <App />
     </GlobalProvider>

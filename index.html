@@ -14,5 +14,11 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          window.Telegram.WebApp.ready();
+          window.Telegram.WebApp.expand();
+      });
+  </script>
   </body>
 </html>
