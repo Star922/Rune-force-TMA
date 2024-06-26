@@ -214,8 +214,8 @@ const Home = () => {
             }}
           ></div>
         </div>
-        <div className="w-full">
-          <div className="flex flex-col items-center not-selectable w-full">
+        <div className="w-full not-selectable">
+          <div className="flex flex-col items-center w-full">
             <div className="w-full px-10">
               <div className="flex justify-between items-baseline w-full mb-2">
                 <span className="font-press-start text-[#9E9E9E] text-[10px] font-bold">
@@ -228,7 +228,7 @@ const Home = () => {
           </div>
           <Link
             to=""
-            className="flex flex-col items-center mt-3 justify-center cursor-pointer transform origin-bottom transition not-selectable"
+            className="flex flex-col items-center mt-3 justify-center cursor-pointer transform origin-bottom transition"
           >
             <img
               src="/image/play.png"
