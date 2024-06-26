@@ -62,7 +62,7 @@ const Home = () => {
     newDiv.style.top = `${y - 50}px`;
     newDiv.style.color = "white";
     newDiv.className =
-      "dynamic-div animate-fadeouttopright transform max-sm:text-3xl text-5xl font-bold transition not-selectable"; // You can add Tailwind classes here if needed
+      "dynamic-div animate-fadeouttopright z-20 transform max-sm:text-3xl text-5xl font-bold transition not-selectable"; // You can add Tailwind classes here if needed
 
     // Append the new div to the body
 
@@ -135,23 +135,26 @@ const Home = () => {
 
   const modalRef = useRef<HTMLDivElement>(null);
 
-
   const handleClickOutside = (event: MouseEvent) => {
-    if (modalVisible && modalRef.current && !modalRef.current.contains(event.target as Node)) {
+    if (
+      modalVisible &&
+      modalRef.current &&
+      !modalRef.current.contains(event.target as Node)
+    ) {
       setModalVisible(false);
     }
   };
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [modalVisible]);
 
   return (
     <div className="w-full h-screen flex flex-col p-3">
-      <div className="flex flex-col h-full relative items-center justify-around" >
+      <div className="flex flex-col h-full relative items-center justify-around">
         <div
           className="relative justify-center items-center w-full h-[50px] mb-2"
           ref={buttonWrapperRef}
@@ -168,7 +171,10 @@ const Home = () => {
           >
             Rune Force Points
           </div>
-          <div className="text-[64px]" style={{ WebkitTextStrokeWidth: 4 }}>
+          <div
+            className="text-[64px] not-selectable"
+            style={{ WebkitTextStrokeWidth: 4 }}
+          >
             {formatNumberWithCommas(token!)}
           </div>
         </div>
@@ -188,17 +194,25 @@ const Home = () => {
           <img
             src="/image/ellipse.png"
             alt="coin"
-            className="absolute scale-[1.3] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-auto"
+            className="absolute scale-[1.3] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-auto not-selectable"
           ></img>
-          <img
-            src="/image/HealthHero.png"
-            alt="coin"
-            className={`h-[45vh] z-10 ${
+          <div
+            className={`relative my-5 max-sm:my-5 rounded-full bg-cover aspect-square h-[45vh] aspect-square flex-shrink-0  ${
               remainedEnergy > 0
                 ? "cursor-pointer"
                 : "cursor-not-allowed opacity-50"
             }`}
-          ></img>
+            ref={bodyRef}
+            style={{ backgroundImage: "url('/image/HealthHero.png')" }}
+            onTouchStart={(e) => {
+              if (!isMobile) return;
+              handleTouch(e);
+            }}
+            onClick={(e) => {
+              console.log("clickEvent: ", e);
+              handleTap(e);
+            }}
+          ></div>
         </div>
         <div className="w-full">
           <div className="flex flex-col items-center not-selectable w-full">
@@ -214,7 +228,7 @@ const Home = () => {
           </div>
           <Link
             to=""
-            className="flex flex-col items-center mt-3 justify-center cursor-pointer transform origin-bottom transition"
+            className="flex flex-col items-center mt-3 justify-center cursor-pointer transform origin-bottom transition not-selectable"
           >
             <img
               src="/image/play.png"
