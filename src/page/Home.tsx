@@ -61,6 +61,7 @@ const Home = () => {
     newDiv.style.left = `${x}px`;
     newDiv.style.top = `${y - 50}px`;
     newDiv.style.color = "white";
+    newDiv.draggable = false;
     newDiv.className =
       "dynamic-div animate-fadeouttopright z-20 transform max-sm:text-3xl text-5xl font-bold transition not-selectable"; // You can add Tailwind classes here if needed
 
@@ -216,7 +217,7 @@ const Home = () => {
             }}
           ></div>
         </div>
-        <div className="w-full not-selectable">
+        <div className="w-full not-selectable" draggable="false" >
           <div className="flex flex-col items-center w-full">
             <div className="w-full px-10">
               <div className="flex justify-between items-baseline w-full mb-2">
