@@ -181,7 +181,7 @@ const Home = () => {
         </div>
 
         <div
-          className="flex justify-center items-center relative"
+          className="flex w-full justify-center items-center relative"
           ref={bodyRef}
           onTouchStart={(e) => {
             if (!isMobile) return;
@@ -197,7 +197,7 @@ const Home = () => {
           <img
             src="/image/ellipse.png"
             alt="coin"
-            className="absolute scale-[1.3] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-auto not-selectable"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-auto not-selectable"
           ></img>
           <div
             className={`relative my-5 max-sm:my-5 rounded-full bg-cover aspect-square h-[40vh] aspect-square flex-shrink-0  ${
