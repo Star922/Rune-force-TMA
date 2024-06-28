@@ -21,7 +21,7 @@ export default function Footer() {
           alt="ranking"
           className="w-12 h-12 p-[1px] rounded-lg"
         />
-        <p className="text-md font-bold text-[#E5D0B3]">Ranking</p>
+        <p className="text-[12px] font-bold text-white font-press-start">RANKING</p>
       </Link>
       <Link
         to="/"
@@ -34,7 +34,7 @@ export default function Footer() {
           alt="play"
           className="w-12 h-12 p-[1px] rounded-lg"
         />
-        <p className="text-md font-bold text-[#E5D0B3]">Play</p>
+        <p className="text-[12px] font-bold text-white font-press-start">PLAY</p>
       </Link>
       <Link
         to="/tasks"
@@ -47,7 +47,7 @@ export default function Footer() {
           alt="tasks"
           className="w-12 h-12 p-[1px] rounded-lg"
         />
-        <p className="text-md font-bold text-[#E5D0B3]">Tasks</p>
+        <p className="text-[12px] font-bold text-white font-press-start">TASKS</p>
       </Link>
     </div>
   );

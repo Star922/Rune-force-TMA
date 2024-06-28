@@ -9,8 +9,14 @@ const Home = () => {
   const { setUser } = useGlobalContext();
   const address = useTonAddress();
   console.log("address: ", address);
-  const [token, setToken] = useState<number>(localStorage.getItem("total") ? Number(localStorage.getItem("total")) : 0);
-  const [remainedEnergy, setRemainedEnergy] = useState(localStorage.getItem("remainedEnergy") ? Number(localStorage.getItem("remainedEnergy")) : 2000);
+  const [token, setToken] = useState<number>(
+    localStorage.getItem("total") ? Number(localStorage.getItem("total")) : 0
+  );
+  const [remainedEnergy, setRemainedEnergy] = useState(
+    localStorage.getItem("remainedEnergy")
+      ? Number(localStorage.getItem("remainedEnergy"))
+      : 2000
+  );
 
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -223,11 +229,12 @@ const Home = () => {
               <ProgressBar value={remainedEnergy * 0.05} />
             </div>
           </div>
-          
         </div>
-        <Footer />
+        <div className="w-full">
+          <Footer />
+        </div>
       </div>
-      
+
       <div
         className={`absolute bottom-0 left-0 right-0 p-4 z-20 transition-all delay-100 duration-300 ease-in-out shadow-lg bg-[#1E3D4B] rounded-t-2xl flex flex-col justify-center gap-4 transform max-h-[80vh] overflow-y-auto ${
           modalVisible ? "translate-y-0" : "translate-y-full"
