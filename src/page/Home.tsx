@@ -4,6 +4,7 @@ import { TonConnectButton, useTonAddress } from "@tonconnect/ui-react";
 import { isMobile } from "react-device-detect";
 import ProgressBar from "../component/ProgressBar";
 import { Link } from "react-router-dom";
+import Footer from "../component/Footer";
 
 const Home = () => {
   const { setUser } = useGlobalContext();
@@ -217,8 +218,8 @@ const Home = () => {
             }}
           ></div>
         </div>
-        <div className="w-full not-selectable" draggable="false" >
-          <div className="flex flex-col items-center w-full">
+        <div className="w-full" draggable="false">
+          <div className="flex flex-col items-center w-full not-selectable">
             <div className="w-full px-10">
               <div className="flex justify-between items-baseline w-full mb-2">
                 <span className="font-press-start text-[#9E9E9E] text-[10px] font-bold">
@@ -229,17 +230,7 @@ const Home = () => {
               <ProgressBar value={remainedEnergy * 0.05} />
             </div>
           </div>
-          <Link
-            to=""
-            className="flex flex-col items-center mt-3 justify-center cursor-pointer transform origin-bottom transition"
-          >
-            <img
-              src="/image/play.png"
-              alt="play"
-              className="w-12 h-12 p-[1px] rounded-lg"
-            />
-            <p className="text-md font-bold text-[#E5D0B3]">Play</p>
-          </Link>
+          <Footer />
         </div>
       </div>
 

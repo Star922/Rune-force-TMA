@@ -65,6 +65,103 @@ export const mockQuest = [
         link: "",
         description: "Share your BTC walllet address",
     }
+];
+
+export const rankingList = [
+    {
+        name: "user_name",
+        score: 500000
+    },
+    {
+        name: "legendarystar1234",
+        score: 430000
+    },
+    {
+        name: "New User",
+        score: 2000
+    },
+    {
+        name: "user_name",
+        score: 100
+    },
+        {
+        name: "user_name",
+        score: 100
+    },
+    {
+        name: "user_name",
+        score: 100
+    },
+    {
+        name: "user_name",
+        score: 100
+    },
+    {
+        name: "user_name",
+        score: 100
+    },
+    {
+        name: "user_name",
+        score: 100
+    },
+    {
+        name: "user_name",
+        score: 100
+    },
+    {
+        name: "user_name",
+        score: 100
+    },
+    {
+        name: "user_name",
+        score: 100
+    },
+
+            {
+        name: "user_name",
+        score: 100
+    },
+    {
+        name: "user_name",
+        score: 100
+    },
+    {
+        name: "user_name",
+        score: 100
+    },
+    {
+        name: "user_name",
+        score: 100
+    },
+    {
+        name: "user_name",
+        score: 100
+    },
+    {
+        name: "user_name",
+        score: 100
+    },
+
+    {
+        name: "user_name",
+        score: 100
+    },
+    {
+        name: "user_name",
+        score: 100
+    },
+    {
+        name: "user_name",
+        score: 100
+    },
+    {
+        name: "user_name",
+        score: 100
+    },
+    {
+        name: "user_name",
+        score: 100
+    }
 ]
 
 
