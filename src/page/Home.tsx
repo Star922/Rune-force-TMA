@@ -203,21 +203,12 @@ const Home = () => {
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-auto not-selectable"
           ></img>
           <div
-            className={`relative my-5 max-sm:my-5 rounded-full bg-cover aspect-square h-[40vh] aspect-square flex-shrink-0  ${
+            className={`relative my-5 max-sm:my-5 rounded-full bg-cover aspect-square h-[40vh] aspect-square flex-shrink-0 active:scale-95  ${
               remainedEnergy > 0
                 ? "cursor-pointer"
                 : "cursor-not-allowed opacity-50"
             }`}
-            ref={bodyRef}
             style={{ backgroundImage: "url('/image/HealthHero.png')" }}
-            onTouchStart={(e) => {
-              if (!isMobile) return;
-              handleTouch(e);
-            }}
-            onClick={(e) => {
-              console.log("clickEvent: ", e);
-              handleTap(e);
-            }}
           ></div>
         </div>
         <div className="w-full" draggable="false">
