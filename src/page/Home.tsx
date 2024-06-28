@@ -9,7 +9,7 @@ const Home = () => {
   const { setUser } = useGlobalContext();
   const address = useTonAddress();
   console.log("address: ", address);
-  const [token, setToken] = useState<number>(0);
+  const [token, setToken] = useState<number>(localStorage.getItem("total") ? Number(localStorage.getItem("total")) : 0);
   const [remainedEnergy, setRemainedEnergy] = useState(localStorage.getItem("remainedEnergy") ? Number(localStorage.getItem("remainedEnergy")) : 2000);
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -83,8 +83,10 @@ const Home = () => {
       localStorage.setItem("remainedEnergy", String(remainedEnergy - 1));
       if (token === null) {
         setToken(1);
+        localStorage.setItem("total", String(1));
       } else {
         setToken(token + 1);
+        localStorage.setItem("total", String(token + 1));
       }
       handleClick(event);
     }
@@ -118,6 +120,7 @@ const Home = () => {
     if (remainedEnergy - length >= 0 && length >= 1) {
       setRemainedEnergy(remainedEnergy - length);
       setToken(token + length);
+      localStorage.setItem("total", String(token + length));
       handleMultiTouchStart(event);
     }
   };
