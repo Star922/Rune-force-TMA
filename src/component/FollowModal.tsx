@@ -34,10 +34,6 @@ const TermsModal = (props: any) => {
                 <div className="p-4 md:p-5 font-press-start text-black">
                     {getFollowText(props.followType)}
                 </div>
-                <div className='flex flex-row justify-center items-center'>
-                    <img src={`/image/${props.followType}.png`} className='w-[24px] h-[24px] rounded-md'></img>
-                    <div className='px-2 text-left text-black text-[12px] underline'>@GoHealthInfo</div>
-                </div>
                 <div className={`mt-6 ${(props.followType === 'Telegram' || props.followType === 'Website') && 'hidden' }`}>
                     <input className='rounded-md text-[24px] w-[80vw] outline-[#43E0F7]'></input>
                 </div>
