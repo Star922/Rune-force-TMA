@@ -225,9 +225,9 @@ const Home = () => {
           </div>
           
         </div>
-        
+        <Footer />
       </div>
-      <Footer />
+      
       <div
         className={`absolute bottom-0 left-0 right-0 p-4 z-20 transition-all delay-100 duration-300 ease-in-out shadow-lg bg-[#1E3D4B] rounded-t-2xl flex flex-col justify-center gap-4 transform max-h-[80vh] overflow-y-auto ${
           modalVisible ? "translate-y-0" : "translate-y-full"
