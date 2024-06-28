@@ -25,7 +25,7 @@ const TermsModal = (props: any) => {
                     <img src={`/image/${props.followType}.png`} className='w-[24px] h-[24px] rounded-md'></img>
                     <div className='px-2 text-left text-black text-[12px] underline'>@GoHealthInfo</div>
                 </div>
-                <div className='mt-6'>
+                <div className={`mt-6 ${(props.followType === 'Telegram' || props.followType === 'Website') && 'hidden' }`}>
                     <input className='rounded-md text-[24px] w-[80vw] outline-[#43E0F7]'></input>
                 </div>
                 <button className='mt-4 w-[80vw] rounded-full text-[#43E0F7] text-[16px] p-1 bg-black' onClick={() => props.setIsModalOpen(false)}>Verify</button>
