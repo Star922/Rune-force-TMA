@@ -130,6 +130,7 @@ const Tasks = () => {
         <TermsModal
           setIsModalOpen={setIsModalOpen}
           followType={followType}
+          isModalOpen={isModalOpen}
         ></TermsModal>
       )}
     </div>

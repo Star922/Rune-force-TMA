@@ -1,5 +1,18 @@
 
+import { useRef, useEffect } from "react";
 const TermsModal = (props: any) => {
+    const modalRef = useRef<HTMLDivElement | null>(null);
+    const handleMouseClickOutside = (e: any) => {
+        if (modalRef && modalRef.current && !modalRef.current.contains(e.target)) {
+            props.setIsModalOpen(false);
+        }
+    }
+    useEffect(() => {
+        document.addEventListener('mousedown', handleMouseClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleMouseClickOutside);
+        }
+    }, [props.isModalOpen])
     console.log('---------- ', props)
     const getFollowText = (followType: string) => {
         if (followType === 'Twitter') {
@@ -16,7 +29,7 @@ const TermsModal = (props: any) => {
     }
 
     return (
-        <div className="fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-4 border-4 border-[#43E0F7] rounded-xl bg-[#CBEFF9] w-[95vw] font-press-start">
+        <div className="fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-4 border-4 border-[#43E0F7] rounded-xl bg-[#CBEFF9] w-[95vw] font-press-start" ref={modalRef}>
             <div className="relative rounded-lg">
                 <div className="p-4 md:p-5 font-press-start text-black">
                     {getFollowText(props.followType)}

@@ -3,7 +3,6 @@ import { useGlobalContext } from "../context/GlobalContext";
 import { TonConnectButton, useTonAddress } from "@tonconnect/ui-react";
 import { isMobile } from "react-device-detect";
 import ProgressBar from "../component/ProgressBar";
-import { Link } from "react-router-dom";
 import Footer from "../component/Footer";
 
 const Home = () => {
@@ -11,7 +10,7 @@ const Home = () => {
   const address = useTonAddress();
   console.log("address: ", address);
   const [token, setToken] = useState<number>(0);
-  const [remainedEnergy, setRemainedEnergy] = useState(2000);
+  const [remainedEnergy, setRemainedEnergy] = useState(localStorage.getItem("remainedEnergy") ? Number(localStorage.getItem("remainedEnergy")) : 2000);
 
   const [modalVisible, setModalVisible] = useState(false);
 
