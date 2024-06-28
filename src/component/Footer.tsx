@@ -1,7 +1,13 @@
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Footer() {
   const location = useLocation();
+  const [path, setPath] = useState(location.pathname); // Initialize state with current pathname
+  useEffect(() => {
+    // Update the state whenever the location changes
+    setPath(location.pathname);
+  }, [location]);
   return (
     <div className="flex justify-around items-center">
       <Link
@@ -20,7 +26,7 @@ export default function Footer() {
       <Link
         to="/"
         className={`flex flex-col items-center mt-3 transform origin-bottom justify-center cursor-pointer transform origin-bottom transition ${
-          location.pathname === "/" ? "scale-[110%] opacity-100" : "opacity-40"
+          path === "/" ? "scale-[110%] opacity-100" : "opacity-40"
         }`}
       >
         <img
@@ -33,7 +39,7 @@ export default function Footer() {
       <Link
         to="/tasks"
         className={`flex flex-col items-center mt-3 transform origin-bottom justify-center cursor-pointer transform origin-bottom transition ${
-          location.pathname === "/tasks" ? "scale-[110%] opacity-100" : "opacity-40"
+          path === "/tasks" ? "scale-[110%] opacity-100" : "opacity-40"
         }`}
       >
         <img
