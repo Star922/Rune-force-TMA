@@ -14,11 +14,23 @@ const Rank = () => {
   const [tab, setTab] = useState("record");
 
   const [isYou] = useState(false);
+  function formatNumberWithCommas(number: number, locale = "en-US") {
+    return new Intl.NumberFormat(locale).format(number);
+  }
 
   return (
     <div className="w-full h-full flex flex-col py-3 px-3">
-      <div className="font-press-start text-4xl mt-2">Ranking</div>
-      <div className="text-center mt-[1vh] z-3 overflow-auto border-4 border-[#43E0F7] rounded-xl scrollbar-hidden">
+      <div
+        className="font-press-start text-3xl text-black mt-2"
+        style={{
+          WebkitTextStrokeColor: "white",
+          WebkitTextStrokeWidth: 2,
+          fontWeight: "bolder",
+        }}
+      >
+        Ranking
+      </div>
+      <div className="text-center my-[2vh] z-3 overflow-auto border-4 border-[#43E0F7] rounded-xl scrollbar-hidden">
         <div
           className="flex flex-col gap-1 font-press-start p-1 text-black pt-[3vh] bg-[#CBEFF9]"
           style={{ zIndex: 3 }}
@@ -77,7 +89,7 @@ const Rank = () => {
                     <td className="px-2 py-2">
                       {product.name !== user.username ? product.name : "You"}
                     </td>
-                    <td className="px-2 py-2">{product.score}</td>
+                    <td className="px-2 py-2">{formatNumberWithCommas(product.score)}</td>
                   </tr>
                 ))}
                 {!isYou && (
@@ -89,7 +101,7 @@ const Rank = () => {
                       {myRank.rank}
                     </td>
                     <td className="px-2 py-2">You</td>
-                    <td className="px-2 py-2">{myRank.score}</td>
+                    <td className="px-2 py-2">{formatNumberWithCommas(myRank.score)}</td>
                   </tr>
                 )}
               </tbody>

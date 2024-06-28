@@ -15,7 +15,7 @@ export default function Footer() {
         <p className="text-md font-bold text-[#E5D0B3]">Ranking</p>
       </Link>
       <Link
-        to=""
+        to="/"
         className="flex flex-col items-center mt-3 justify-center cursor-pointer transform origin-bottom transition"
       >
         <img
