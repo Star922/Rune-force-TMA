@@ -6,12 +6,13 @@ import Footer from "../component/Footer";
 const Tasks = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [followType, setFollowType] = useState("Twitter");
+  const totalScore = localStorage.getItem("total")
 
   return (
     <div className="w-full h-full flex flex-col py-3 px-3 ">
       <div className="bg-black rounded-full ml-auto text-right flex flex-row gap-3 justify-between px-3 py-1 border-2 border-white items-center">
         <img src={Coin} alt="Coin"></img>
-        <div>{0}</div>
+        <div>{totalScore}</div>
       </div>
       <div
         className="font-press-start text-4xl mt-3 text-black font-semibold"
