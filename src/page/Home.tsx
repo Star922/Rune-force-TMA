@@ -5,6 +5,8 @@ import { isMobile } from "react-device-detect";
 import ProgressBar from "../component/ProgressBar";
 import Footer from "../component/Footer";
 
+import Coin from "/image/coin.svg";
+
 const Home = () => {
   const { setUser } = useGlobalContext();
   const address = useTonAddress();
@@ -175,17 +177,12 @@ const Home = () => {
           className="text-center mt-[10%] text-black font-press-start not-selectable"
           style={{ WebkitTextStrokeColor: "white" }}
         >
-          <div
-            className="text-[18px] font-[1000]"
-            style={{ WebkitTextStrokeWidth: 1 }}
-          >
-            Rune Force Points
+          <div className="text-[32px]" style={{ WebkitTextStrokeWidth: 1 }}>
+            Tap & Earn
           </div>
-          <div
-            className="text-[64px] not-selectable"
-            style={{ WebkitTextStrokeWidth: 4 }}
-          >
-            {formatNumberWithCommas(token!)}
+          <div className="bg-black rounded-full justify-between flex flex-row gap-1 px-3 py-1 border-2 border-white items-center">
+            <img src={Coin} alt="Coin"></img>
+            <div className="text-white pr-3 text-[12px]">{token}</div>
           </div>
         </div>
 
