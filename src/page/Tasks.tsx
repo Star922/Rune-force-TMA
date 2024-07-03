@@ -125,7 +125,7 @@ const Tasks = () => {
         <div className="flex items-center gap-3">
           <div className="flex-none">
             <img
-              src="/image/Website.png"
+              src="/image/website1.png"
               className="w-[24px] h-[24px] rounded-md"
             ></img>
           </div>
