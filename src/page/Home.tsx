@@ -40,7 +40,21 @@ const Home = () => {
   };
 
   function formatNumberWithCommas(number: number, locale = "en-US") {
-    return new Intl.NumberFormat(locale).format(number);
+    if (number >= 1000000000) {
+      number = number / 1000000000;
+      return `${new Intl.NumberFormat(locale).format(number)}B`;
+    }
+    else if (number >= 1000000) {
+      number = number / 1000000;
+      return `${new Intl.NumberFormat(locale).format(number)}M`;
+    }
+    else if (number >= 1000) {
+      number = number / 1000;
+      return `${new Intl.NumberFormat(locale).format(number)}K`;
+    }
+    else {
+      return new Intl.NumberFormat(locale).format(number);
+    }
   }
 
   const bodyRef = useRef<HTMLDivElement | null>(null);
@@ -180,7 +194,7 @@ const Home = () => {
           <div className="text-[32px]" style={{ WebkitTextStrokeWidth: 1 }}>
             Tap & Earn
           </div>
-          <div className="bg-black w-[180px] mx-auto rounded-full justify-between flex flex-row gap-1 px-3 py-1 border-2 border-white items-center">
+          <div className="bg-black w-[160px] mx-auto rounded-full justify-between flex flex-row gap-1 px-3 py-1 border-2 border-white items-center">
             <img src={Coin} alt="Coin"></img>
             <div className="text-white pr-3 text-[18px]">{formatNumberWithCommas(token)}</div>
           </div>
