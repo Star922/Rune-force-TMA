@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import Layout from "./Layout";
 import Rank from "./page/Rank";
 import Tasks from "./page/Tasks";
+import Boosts from "./page/Boosts";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="rank" element={<Rank />} />
             <Route path="tasks" element={<Tasks />} />
+            <Route path="boosts" element={<Boosts />} />
           </Route>
         </Routes>
         <ToastContainer />

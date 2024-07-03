@@ -19,7 +19,7 @@ const Rank = () => {
   }
 
   return (
-    <div className="w-full h-full flex flex-col py-3 px-3">
+    <div className="w-full h-full flex flex-col py-3 px-3 justify-between">
       <div
         className="font-press-start text-3xl text-black mt-2"
         style={{

@@ -180,7 +180,7 @@ const Home = () => {
 
   return (
     <div className="w-full h-screen flex flex-col p-3">
-      <div className="flex flex-col h-full relative items-center justify-around">
+      <div className="flex flex-col h-full relative items-center justify-between">
         <div
           className="relative justify-center items-center w-full h-[50px] mb-2"
           ref={buttonWrapperRef}

@@ -132,35 +132,6 @@ export const rankingList = [
     {
         name: "user_name",
         score: 100
-    },
-    {
-        name: "user_name",
-        score: 100
-    },
-    {
-        name: "user_name",
-        score: 100
-    },
-
-    {
-        name: "user_name",
-        score: 100
-    },
-    {
-        name: "user_name",
-        score: 100
-    },
-    {
-        name: "user_name",
-        score: 100
-    },
-    {
-        name: "user_name",
-        score: 100
-    },
-    {
-        name: "user_name",
-        score: 100
     }
 ]
 

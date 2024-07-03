@@ -11,21 +11,8 @@ export default function Footer() {
   return (
     <div className="flex justify-around items-center">
       <Link
-        to="/rank"
-        className={`flex flex-col items-center mt-3 transform origin-bottom justify-center cursor-pointer transform origin-bottom transition ${
-          location.pathname === "/rank" ? "scale-[110%] opacity-100" : "opacity-40"
-        }`}
-      >
-        <img
-          src="/image/ranking.png"
-          alt="ranking"
-          className="w-12 h-12 p-[1px] rounded-lg"
-        />
-        <p className="text-[12px] font-bold text-white font-press-start">RANKING</p>
-      </Link>
-      <Link
         to="/"
-        className={`flex flex-col items-center mt-3 transform origin-bottom justify-center cursor-pointer transform origin-bottom transition ${
+        className={`flex flex-col items-center mt-3 transform origin-bottom justify-center cursor-pointer transition ${
           path === "/" ? "scale-[110%] opacity-100" : "opacity-40"
         }`}
       >
@@ -34,11 +21,30 @@ export default function Footer() {
           alt="play"
           className="w-12 h-12 p-[1px] rounded-lg"
         />
-        <p className="text-[12px] font-bold text-white font-press-start">PLAY</p>
+        <p className="text-[12px] font-bold text-white font-press-start">
+          PLAY
+        </p>
       </Link>
+
+      <Link
+        to="/boosts"
+        className={`flex flex-col items-center mt-3 transform origin-bottom justify-center cursor-pointer transition ${
+          path === "/boosts" ? "scale-[110%] opacity-100" : "opacity-40"
+        }`}
+      >
+        <img
+          src="/image/boosts.png"
+          alt="boosts"
+          className="w-12 h-12 p-[1px] rounded-lg"
+        />
+        <p className="text-[12px] font-bold text-white font-press-start">
+          BOOSTS
+        </p>
+      </Link>
+
       <Link
         to="/tasks"
-        className={`flex flex-col items-center mt-3 transform origin-bottom justify-center cursor-pointer transform origin-bottom transition ${
+        className={`flex flex-col items-center mt-3 transform origin-bottom justify-center cursor-pointer transition ${
           path === "/tasks" ? "scale-[110%] opacity-100" : "opacity-40"
         }`}
       >
@@ -47,8 +53,30 @@ export default function Footer() {
           alt="tasks"
           className="w-12 h-12 p-[1px] rounded-lg"
         />
-        <p className="text-[12px] font-bold text-white font-press-start">TASKS</p>
+        <p className="text-[12px] font-bold text-white font-press-start">
+          TASKS
+        </p>
       </Link>
+
+      <Link
+        to="/rank"
+        className={`flex flex-col items-center mt-3 transform origin-bottom justify-center cursor-pointer transition ${
+          location.pathname === "/rank"
+            ? "scale-[110%] opacity-100"
+            : "opacity-40"
+        }`}
+      >
+        <img
+          src="/image/ranking.png"
+          alt="ranking"
+          className="w-12 h-12 p-[1px] rounded-lg"
+        />
+        <p className="text-[12px] font-bold text-white font-press-start">
+          RANKING
+        </p>
+      </Link>
+
+
     </div>
   );
 }
